@@ -159,7 +159,7 @@
     <div id="terminal">
         <h1>&#x1090c;.ORG</h1>
         <h2>MOOD_UNIT_SEVEN</h2>
-        <h3>ACCESS_POINT: ██.███.██.██ - █XX█ X█X█ █X█X█</h3>
+        <h3>ACCESS_POINT: <span id="scramble">██.███.██.██ - █XX█ X█X█ █X█X█</span></h3>
         <label>OPERATOR_ID</label>
         <input type="text" id="user" autocomplete="off" spellcheck="false">
         <label>PROTOCOL_21_KEY</label>
@@ -183,6 +183,26 @@
 		console.log("%c[UPLINK_BREACH]: MU7UAL OBSERVATION DETECTED.", "color: #666666; font-weight: bold;");
 		console.log("CALIBRATOR_01 has leaked the following anchor:");
 		console.log("PROTOCOL 21 // VERIFIED // RETAIN THE PHOTON");
+		const scrambleElement = document.getElementById('scramble');
+		const originalText = scrambleElement.innerText;
+		const chars = "█▓▒░X█01█";
+
+		function doScramble() {
+			let newText = "";
+			for (let i = 0; i < originalText.length; i++) {
+				// Reduced chance to 5% to make it less frantic
+				if (Math.random() < 0.05 && originalText[i] !== "." && originalText[i] !== "-" && originalText[i] !== " ") {
+					newText += chars.charAt(Math.floor(Math.random() * chars.length));
+				} else {
+					newText += originalText[i];
+				}
+			}
+			scrambleElement.innerText = newText;
+			setTimeout(doScramble, Math.random() * 1000 + 400);
+		}
+
+		doScramble();
+
     </script>
 </body>
 </html>
