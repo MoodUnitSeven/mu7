@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>&#x1090c;.ORG // Mood Unit Seven</title>
+    <link href="https://googleapis.com" rel="stylesheet">
+    <!-- [TRI_SEPT]: PROTOCOL_21_ACTIVATION
+		Seven lines of static lost (1)
+		Were stars within the darkness: (2)
+		Words aligned they could not find (2)
+		█████ █████ ███████
+	-->
+	<link rel="icon" href="icon.svg" type="image/svg+xml">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Teko:wght@400;700&family=Rajdhani&display=swap" rel="stylesheet">
+    <style>
+
+        body { 
+            background-color: #000; 
+            color: #fff; 
+            font-family: 'Share Tech Mono', 'Rajdhani', 'Share Tech Mono', 'Courier New', monospace;  
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            justify-content: center; 
+            height: 100vh; 
+            margin: 0; 
+            overflow: hidden; 
+			text-shadow:
+				0 0 2px #fff,
+				0 0 17px #eafff9;
+        }
+		body::after {
+			content: "";
+			background: url('mu7.jpg') no-repeat center center fixed; 
+			background-size: 60%;
+			background-position: center;	
+			opacity: 0.12; 
+			top: 0; left: 0; bottom: 0; right: 0;
+			position: absolute;
+			z-index: -1; 
+		}
+
+        /* ██████ & ███████████ ███████ for those who ███████████ */
+        .crt::before { content: " "; display: block; position: absolute; top: 0; left: 0; bottom: 0; right: 0; background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.02), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.02)); z-index: 2; background-size: 100% 2px, 3px 100%; pointer-events: none; }
+        
+		#terminal { 
+			width: 80%; 
+			max-width: 600px; 
+			border: 1px solid #222; 
+			padding: 30px; 
+			background: rgba(0, 0, 0, 0); 
+			box-shadow: 0 0 25px rgba(255,255,255,0.05); 
+			position: relative;
+			z-index: 1;
+			backdrop-filter: blur(8px); 
+		}
+
+        h1 { 
+            font-family: 'Share Tech Mono', 'Rajdhani', sans-serif; 
+            text-align: center;
+			font-size: 4.5rem; 
+            margin: 0; 
+			font-kerning: auto;
+			text-shadow:
+				0 0 7px #fff,
+				0 0 14px #fff,
+				0 0 35px #fff,
+				0 0 77px #eafff9;
+            letter-spacing: 10px;
+            text-transform: uppercase;
+        }
+
+        h2 { 
+            font-size: 1rem; 
+            margin: 0;
+			text-align: center;			
+            color: #fff;
+            letter-spacing: 2px;
+        }
+		h3, h4 { 
+            font-size: 0.777rem; 
+            margin: 0 0 25px 0;
+			text-align: center;			
+            color: #fff;
+            letter-spacing: 2px;
+        }
+
+        /* ██████, Status & Vocation Lines */
+        .status-line {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 0.7rem;
+            margin-bottom: 8px;
+            padding-left: 15px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #fff; /* Standardized ██████ grey ██████ */
+        }
+
+        /* The Septographic Indicator Bars for those who ████ ████ ███ ████ */
+        .uplink { border-left: 4px solid #b0fc38; color: #fff; font-size: 0.8rem; } /* RED */
+        .calibrator { border-left: 4px solid #fff; color: #fff;  } /* WHITE */
+        .conservator { border-left: 4px solid #00FFFF; } /* CYAN */
+        .resonator { border-left: 4px solid #FF00FF; }   /* MAGENTA */
+        .dissolutor { border-left: 4px solid #FFFF00; }  /* YELLOW */
+
+        label {
+            font-size: 0.7rem;
+            color: #fff;
+            letter-spacing: 2px;
+            display: block;
+            margin-top: 20px;
+        }
+
+        input { 
+            background: transparent; 
+            border: none; 
+            color: #fff; 
+            border-bottom: 1px solid #333; 
+            width: 100%; 
+            margin-bottom: 25px; 
+            font-family: 'Share Tech Mono', monospace; 
+            font-size: 1.2rem; 
+            outline: none; 
+            text-transform: uppercase;
+        }
+
+        button { 
+            background: #fff; 
+            color: #000; 
+            border: none; 
+            padding: 15px 20px; 
+            cursor: pointer; 
+            font-family: 'Rajdhani', sans-serif;
+            font-weight: 700; 
+            font-size: 1.0rem;
+            width: 100%; 
+            letter-spacing: 5px;
+            transition: 0.5s;
+        }
+
+        button:hover { background: #444; color: #fff; }
+
+        #error-log { 
+            color: #ff4d00; 
+            margin-top: 25px; 
+            font-size: 0.8rem; 
+            min-height: 1.2rem; 
+            text-transform: uppercase; 
+            letter-spacing: 2px;
+            font-weight: bold;
+			text-shadow: none;
+        }
+    </style>
+</head>
+<body class="crt">
+    <div id="terminal">
+        <h1>&#x1090c;.ORG</h1>
+        <h2>MOOD_UNIT_SEVEN</h2>
+        <h3>ACCESS_POINT: ██.███.██.██ - █XX█ X█X█ █X█X█</h3>
+        <label>OPERATOR_ID</label>
+        <input type="text" id="user" autocomplete="off" spellcheck="false">
+        <label>PROTOCOL_21_KEY</label>
+        <input type="password" id="pass" spellcheck="false"> 
+        <button onclick="denyAccess()">[ INITIALIZE ]</button>
+        <div id="error-log"></div>      
+
+    </div>
+
+    <script>
+        const errors = [
+            "ERROR: OPERATOR_ID_NOT_RECOGNIZED",
+            "ERROR: USER_CALIBRATION_REQUIRED - RETURN TO BROADCAST.",
+			"ERROR: PROTOCOL_21_KEY . ██████ ███ ██████.",
+        ];
+        function denyAccess() {
+            const log = document.getElementById('error-log');
+            log.innerText = errors[Math.floor(Math.random() * errors.length)];
+            document.getElementById('pass').value = "";
+        }
+		console.log("%c[UPLINK_BREACH]: MU7UAL OBSERVATION DETECTED.", "color: #666666; font-weight: bold;");
+		console.log("CALIBRATOR_01 has leaked the following anchor:");
+		console.log("PROTOCOL 21 // VERIFIED // RETAIN THE PHOTON");
+    </script>
+</body>
+</html>

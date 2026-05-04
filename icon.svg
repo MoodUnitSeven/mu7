@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://w3.org" viewBox="0 0 32 32">
+<style>
+/* 60bpm industrial pulse */ 
+@keyframes pulse { 
+  0%, 100% { opacity: 1; filter: drop-shadow(0 0 2px #fff); } 
+  50% { opacity: 0.15; filter: drop-shadow(0 0 0px #fff); } 
+} 
+.sigil { 
+  fill: none; 
+  stroke: #FFFFFF; 
+  stroke-width: 5; 
+  stroke-linejoin: round; 
+  stroke-linecap: round; 
+  animation: pulse 1s infinite ease-in-out; 
+} 
+/* Clinical dark-mode adaptation */ 
+@media (prefers-color-scheme: light) { 
+  .sigil { stroke: #000000; } 
+}
+</style>
+<path class="sigil" d="M4 24 L8 8 L14 20 L20 8 L26 24"/>
+</svg>
