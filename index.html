@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
     <title>&#x1090c;.ORG // Mood Unit Seven</title>
     <link href="https://googleapis.com" rel="stylesheet">
@@ -153,6 +154,44 @@
             font-weight: bold;
 			text-shadow: none;
         }
+		/* Mobile Responsive Requisition */
+		@media screen and (max-width: 768px) {
+			#terminal {
+				width: 95%; /* Expands to fill the narrow screen */
+				padding: 15px; /* Tighter padding for mobile */
+				border: 1px solid #333; /* Slightly more visible border */
+			}
+
+			h1 {
+				font-size: 2.5rem;
+				letter-spacing: 5px;
+			}
+
+			h2 {
+				font-size: 0.8rem;
+			}
+
+			h3 {
+				font-size: 0.6rem;
+				word-break: break-all; 
+			}
+
+			input {
+				font-size: 1rem;
+				margin-bottom: 15px;
+			}
+
+			button {
+				padding: 12px;
+				font-size: 0.9rem;
+				letter-spacing: 3px;
+			}
+
+			body::after {
+				background-size: 80%; /* Makes the sigil larger on vertical screens */
+			}
+		}
+
     </style>
 </head>
 <body class="crt">
