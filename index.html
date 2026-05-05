@@ -182,7 +182,7 @@
         function doScramble() {
             let newText = "";
             for (let i = 0; i < originalText.length; i++) {
-                if (Math.random() < 0.02 && originalText[i] !== "_" && originalText[i] !== " ") {
+                if (Math.random() < 0.03 && originalText[i] !== "_" && originalText[i] !== " ") {
                     newText += chars.charAt(Math.floor(Math.random() * chars.length));
                 } else {
                     newText += originalText[i];
