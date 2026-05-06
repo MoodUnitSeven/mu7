@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
     <title>mu7.ORG // Mood Unit Seven</title>
-     <!-- [TRI_SEPT]: PROTOCOL_21_ACTIVATION
+     <!-- [TR1_SEPT0GRAM]: PR0T0CO1_21_ACTIVATION
         Seven lines of static lost (5)(1)(4)
         Are stars within the darkness: (1)(2)(3)
         Words aligned they could not find (3)(2)(1)
@@ -12,52 +12,94 @@
 		█████ █████ ███████
 		██████ ██████ █████
     -->
-    <!-- Uplink Assets -->   
     <link rel="icon" href="icon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
     
     <link rel="preconnect" href="https://googleapis.com">
     <link rel="preconnect" href="https://gstatic.com" crossorigin>
-    <!-- [SIGNAL_AUTH]: Loading Rajdhani (Headers/Buttons) and Share Tech Mono (Terminal Data) -->
-    <link href="https://googleapis.com/css2?family=Rajdhani:wght@500;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <link href="https://googleapis.com" rel="stylesheet">
     
     <style>
         body { 
             background-color: #000; 
             color: #fff; 
-            font-family: 'Share Tech Mono', 'Rajdhani', 'Share Tech Mono', 'Courier New', monospace;
+            font-family: 'Share Tech Mono', 'Rajdhani', 'Courier New', monospace;
             display: flex; 
             flex-direction: column; 
             align-items: center; 
             justify-content: center; 
-            height: 100vh; 
+            height: 100dvh; 
             margin: 0; 
             overflow: hidden; 
             text-shadow: 0 0 2px #fff, 0 0 10px #eafff9;
             -webkit-text-size-adjust: 100%;
         }
 
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0; left: 0; bottom: 0; right: 0;
+            background: radial-gradient(circle, transparent 40%, rgba(0,0,0,0.85) 100%);
+            z-index: 10;
+            pointer-events: none;
+        }
+
         body::after {
             content: "";
-            background: url('mu7.jpg') no-repeat center center fixed; 
+            background: url('mu7xo.jpg') no-repeat center center fixed; 
             background-size: 60%;
             background-position: center;    
-            opacity: 0.15; /* Adjusted for better visibility through terminal */
+            opacity: 0.15;
             top: 0; left: 0; bottom: 0; right: 0;
             position: absolute;
             z-index: -1; 
+            animation: breathe 12s ease-in-out infinite;
         }
 
-        .crt::before { 
-            content: " "; 
-            display: block; 
-            position: absolute; 
+        /* [DATA_WIPE] - THEY_ARE_WATCHING */
+        .scan-bar {
+            position: absolute;
+            top: -100%;
+            left: 0;
+            width: 100%;
+            height: 12px;
+            background: rgba(255, 255, 255, 0.08);
+            box-shadow: 0 0 15px rgba(234, 255, 249, 0.3);
+            z-index: 1;
+            animation: scanline 21s linear infinite, flicker 0.7s infinite;
+        }
+		
+        .crt-overlay { 
+            position: fixed; 
             top: 0; left: 0; bottom: 0; right: 0; 
-            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), 
-                        linear-gradient(90deg, rgba(255, 0, 0, 0.01), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.01)); 
-            z-index: 10; 
-            background-size: 100% 2px, 3px 100%; 
+            width: 100%; height: 100%;
+            background: repeating-linear-gradient(
+                0deg,
+                rgba(0, 0, 0, 0.35) 0px,
+                rgba(0, 0, 0, 0.35) 1px,
+                transparent 1px,
+                transparent 2px
+            );
             pointer-events: none; 
+            z-index: 999; 
+            opacity: 0.65;
+        }
+
+        @keyframes breathe {
+            0%, 100% { transform: scale(1); opacity: 0.12; }
+            50% { transform: scale(1.03); opacity: 0.22; }
+        }
+
+        @keyframes scanline {
+            0% { top: -10%; }
+            8% { top: 110%; }
+            100% { top: 110%; }
+        }
+
+        @keyframes flicker {
+            0% { opacity: 0.4; }
+            50% { opacity: 1; }
+            100% { opacity: 0.7; }
         }
         
         #terminal { 
@@ -65,28 +107,23 @@
             max-width: 500px; 
             border: 1px solid #222; 
             padding: 30px; 
-            /* Transparent center to see the ghost sigil */
-            background: rgba(0, 0, 0, 0.15); 
+            background: rgba(0, 0, 0, 0.25); 
             box-shadow: 0 0 40px rgba(0, 0, 0, 0.9); 
             position: relative;
-            z-index: 5;
-            /* Cross-browser blur handshake */
+            z-index: 50;
             backdrop-filter: blur(12px); 
             -webkit-backdrop-filter: blur(12px); 
         }
 
-        /* Monospace Header */
         h1 { 
             font-family: 'Share Tech Mono', monospace; 
             text-align: center;
-            font-size: 2.2rem; 
+            font-size: clamp(1.5rem, 6vw, 2.2rem); 
             margin: 0 0 15px 0; 
             text-shadow: 0 0 7px #fff, 0 0 25px #eafff9;
             letter-spacing: 4px;
-            text-transform: uppercase;
         }
 
-        /* Rajdhani for Labels and Inputs */
         label {
             font-family: 'Share Tech Mono', sans-serif;
             font-size: 0.8rem;
@@ -105,8 +142,8 @@
             border-bottom: 1px solid #444; 
             width: 100%; 
             margin-bottom: 25px; 
-            font-family: 'Share Tech Mono', monospace; /* Keep input text clinical */
-            font-size: 1.2rem; 
+            font-family: 'Share Tech Mono', monospace; 
+            font-size: 16px; 
             outline: none; 
             border-radius: 0;
             -webkit-appearance: none;
@@ -125,6 +162,7 @@
             letter-spacing: 6px;
             transition: 0.3s ease;
             text-transform: uppercase;
+            -webkit-tap-highlight-color: transparent;
         }
 
         button:hover { background: #444; color: #fff; }
@@ -136,21 +174,25 @@
             font-size: 0.8rem; 
             text-align: center;
             letter-spacing: 1px;
+            text-shadow: none;
+            height: 1.2rem;
         }
 
         @media screen and (max-width: 480px) {
-            h1 { font-size: 1.5rem; letter-spacing: 2px; }
             #terminal { width: 90%; padding: 20px; }
             body::after { background-size: 85%; }
         }
     </style>
 </head>
-<body class="crt">
+<body>
+    <div class="crt-overlay"></div>
+    <div class="scan-bar"></div>
+
     <div id="terminal">
-        <h1><span id="scramble">MOOD</span>_<span id="scramble">UNIT</span>_<span id="scramble">SEVEN</span></h1>
+        <h1><span id="scramble">MOOD_UNIT_SEVEN</span></h1>
         
         <label>OPERATOR_ID</label>
-        <input type="text" id="user" autocomplete="off" spellcheck="false">
+        <input type="text" id="user" autocomplete="off" autocapitalize="none" spellcheck="false">
         
         <label>PROTOCOL_21_KEY</label>
         <input type="password" id="pass" spellcheck="false"> 
@@ -171,25 +213,29 @@
             const log = document.getElementById('error-log');
             log.innerText = errors[Math.floor(Math.random() * errors.length)];
             document.getElementById('pass').value = "";
+            if (window.navigator.vibrate) window.navigator.vibrate(50);
+            setTimeout(() => { log.innerText = ""; }, 7000);
         }
-		console.log("%c[UPLINK_SYNC]: MU7UAL OBSERVATION DETECTED.", "color: #666666; font-weight: bold;");
+
+		console.log("%c[UPLINK_SYNC]: MU7UAL OBSERVATION DETECTED.", "color: #777; font-weight: bold;");
 		console.log("CALIBRATOR_01 has leaked the following anchor:");
-		console.log("PROTOCOL 21 // VERIFIED // RETAIN THE PHOTON");
+		console.log("PROTOCOL 21 // VERIFIED // BROWSER SEQUENCE COMPLETED ");
+
         const scrambleElement = document.getElementById('scramble');
         const originalText = scrambleElement.innerText;
-        const chars = "█▓▒░X█017";
+        const chars = "X0mu7";
 
         function doScramble() {
             let newText = "";
             for (let i = 0; i < originalText.length; i++) {
-                if (Math.random() < 0.03 && originalText[i] !== "_" && originalText[i] !== " ") {
+                if (Math.random() < 0.07 && originalText[i] !== "_" && originalText[i] !== " ") {
                     newText += chars.charAt(Math.floor(Math.random() * chars.length));
                 } else {
                     newText += originalText[i];
                 }
             }
             scrambleElement.innerText = newText;
-            setTimeout(doScramble, Math.random() * 1777 + 500);
+            setTimeout(doScramble, Math.random() * 777 + 1777);
         }
 
         console.log("%c[SIGNAL_LOCK]: MOOD_UNIT_SEVEN_STABILIZED.", "color: #00FFFF; font-weight: bold;");
